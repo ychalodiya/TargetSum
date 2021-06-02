@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import React, { Component } from 'react';
 import { Text, View, StyleSheet} from 'react-native';
 
@@ -7,7 +8,8 @@ export default class App extends Component {
           <View style = {styles.container}>
               <Text>TargetSum</Text>
           </View> 
-        )
+        );
+    // eslint-disable-next-line indent
     }
 }
 const styles = StyleSheet.create({
@@ -15,4 +17,4 @@ const styles = StyleSheet.create({
         backgroundColor: 'red',
         flex: 1
     }
-})
+});
