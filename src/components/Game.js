@@ -36,6 +36,8 @@ export default class Game extends Component {
         clearInterval(this.setIntervalID);
     }
 
+    // reset the component
+
     UNSAFE_componentWillUpdate(nextProps, nextState) {
         if(nextState.selectedIDs !== this.state.selectedIDs || nextState.remainingSeconds === 0) {
             this.gameStatus = this.calcgameStatus(nextState);
@@ -90,7 +92,7 @@ export default class Game extends Component {
                     onPress={this.selectNumber}/>
                 )}
             </View>
-            <Button title="Try Again">Try Again</Button>
+            <Button title="Try Again" onPress={this.props.onPlayAgain}>Try Again</Button>
             <Text style={[styles.gameStatus]}>{this.state.remainingSeconds}</Text>
             <Text style={[styles.gameStatus, styles[`${gameStatus}`]]}>{gameStatus}</Text>
         </View>
